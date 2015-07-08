@@ -4,6 +4,13 @@ namespace ping
 {
 	namespace GameMenu
 	{
+		Button::Button(const sf::String &string, const sf::Font &font)
+		{
+			this->setString(string);
+			this->setFont(font);
+			this->setCharacterSize(30);
+		}
+
 		bool Button::isClicked(const sf::Event& event, const sf::RenderWindow& window) const
 		{
 			//If the left mouse button is pressed and is pressed in the bounding box of the button
