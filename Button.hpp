@@ -5,16 +5,17 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Window/Mouse.hpp>
 
-
-namespace GameMenu 
-{
-	class Button : public sf::Text
+namespace ping {
+	
+	namespace GameMenu 
 	{
-		using Text::Text;
-		public:
-			bool isClicked(const sf::Event&, const sf::RenderWindow&) const;
-			bool isHoveredOver(const sf::RenderWindow&) const;
-	};
+		class Button : public sf::Text
+		{
+			using Text::Text;
+			public:
+				bool isClicked(const sf::Event&, const sf::RenderWindow&) const;
+				bool isHoveredOver(const sf::RenderWindow&) const;
+		};
+	}
 }
-
 #endif

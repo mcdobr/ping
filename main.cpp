@@ -16,7 +16,7 @@ int main()
 	mainFont.loadFromFile("Armageda Wide.ttf");
 
 	//Button prototype
-	GameMenu::Button playButton("PLAY", mainFont);
+	ping::GameMenu::Button playButton("PLAY", mainFont);
 
 	int wid = playButton.getLocalBounds().width;
 	int hei = playButton.getLocalBounds().height;
