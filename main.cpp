@@ -93,10 +93,27 @@ int main()
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-			else if (playButton.isClicked(event, window))	
-					currentState = GameState::GamePlay;
+			switch (event.type)
+			{
+				case sf::Event::Closed:
+				{
+					window.close();
+					break;
+				}
+				case sf::Event::MouseButtonPressed:
+				{
+					if (playButton.isClicked(event, window))
+						currentState = GameState::GamePlay;
+				}
+				case sf::Event::KeyPressed:
+				{
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
 		}
 	}
 	return 0;
