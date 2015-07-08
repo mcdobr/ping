@@ -2,6 +2,7 @@
 #include <SFML/Window.hpp>
 
 #include "Button.hpp"
+#include "GameState.hpp"
 
 int main()
 {
@@ -25,35 +26,78 @@ int main()
 	//Dummy message
 	sf::Text winMessage("You won!", mainFont);
 
-	bool displayMenu = true;
+	//Create a dummy image
+	sf::Image whiteImg;
+	whiteImg.create(128, 128, sf::Color::White);
+	
+	//Create the white plain texture
+	sf::Texture whiteTexture;
+	whiteTexture.loadFromImage(whiteImg, sf::IntRect(0, 0, 8, 64));
+
+	sf::Sprite leftPaddle;
+	leftPaddle.setTexture(whiteTexture);
+	leftPaddle.setTextureRect(sf::IntRect(0, 0, 8, 64));
+	leftPaddle.setPosition(10, (screenHeight - 64) / 2);
+
+	sf::Sprite rightPaddle;
+	rightPaddle.setTexture(whiteTexture);
+	rightPaddle.setTextureRect(sf::IntRect(0, 0, 8, 64));
+	rightPaddle.setPosition(screenWidth - 18, (screenHeight - 64) / 2);
+
+	using ping::GameState;
+	ping::GameState currentState = ping::GameState::SettingsMenu;
+
+	//Main application loop
 	while (window.isOpen())
 	{
 		window.clear();
 
-		//Hover on button
-		if (displayMenu)
+		//Draw stuff on screen
+		switch (currentState)
 		{
-			if (playButton.isHoveredOver(window))	
-				playButton.setColor(sf::Color::Red);
-			else
-				playButton.setColor(sf::Color::White);
-			window.draw(playButton);
+			case GameState::GamePlay:
+			{
+				window.draw(leftPaddle);
+				window.draw(rightPaddle);
+				break;
+			}
+			case GameState::GameWon:
+			{
+				break;
+			}
+			case GameState::GameLost:
+			{
+				break;
+			}
+			case GameState::SettingsMenu:
+			{
+				if (playButton.isHoveredOver(window))	
+					playButton.setColor(sf::Color::Red);
+				else
+					playButton.setColor(sf::Color::White);
+				window.draw(playButton);
+				break;
+			}
+			case GameState::VideoMenu:
+			{
+				break;
+			}
+			case GameState::AudioMenu:
+			{
+				break;
+			}
 		}
-		else
-			window.draw(winMessage);
-
 		window.display();
 
-
+		//Handle events
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
 			else if (playButton.isClicked(event, window))	
-					displayMenu = false;
+					currentState = GameState::GamePlay;
 		}
 	}
-
 	return 0;
 }
