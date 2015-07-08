@@ -1,5 +1,5 @@
-#ifndef GAMESTATES_HPP
-#define GAMESTATES_HPP
+#ifndef GAMESTATE_HPP
+#define GAMESTATE_HPP
 
 namespace ping
 {
