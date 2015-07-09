@@ -9,8 +9,32 @@ namespace ping
 		this -> setTexture(getTextureFromColor(sf::Color::White));
 		this -> setTextureRect(sf::IntRect(sf::Vector2i(0, 0), size));
 		this -> setPosition(position);
+		this -> setSpeed(sf::Vector2f(0, 0));
+		this -> isInMovement = false;
 	}
 
+	//setters
+	void Paddle::setSpeed(const sf::Vector2f& _speed)
+	{
+		speed = _speed;
+		if (speed != sf::Vector2f(0.0, 0.0))
+			isInMovement = true;
+		else
+			isInMovement = false;
+	}
+
+	//Getters
+	bool Paddle::isMoving()
+	{
+		return isInMovement;
+	}
+
+	sf::Vector2f& Paddle::getSpeed()
+	{
+		return speed;
+	}
+
+	//"REAL" functions
 	void Paddle::moveUp()
 	{
 		if (this -> getPosition().y >= 0)

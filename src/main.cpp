@@ -11,8 +11,6 @@ int main()
 	unsigned int screenWidth = 800;
 	unsigned int screenHeight = 600;
 
-	const sf::Vector2f paddleSpeed = {0, 15};
-
 	sf::RenderWindow window;
 	window.create(sf::VideoMode{screenWidth, screenHeight}, "Ping");
 
@@ -27,11 +25,9 @@ int main()
 
 	playButton.setPosition((screenWidth - wid) / 2, (screenHeight - hei) / 2);
 
-	
 	//Create paddles and ball
 	ping::Paddle leftPaddle(sf::Vector2f(10, 268), sf::Vector2i(8, 64));
 	ping::Paddle rightPaddle(sf::Vector2f(782, 268), sf::Vector2i(8, 64));
-	
 	ping::Ball ball;
 
 	using ping::AppState;
@@ -47,7 +43,13 @@ int main()
 		{
 			case AppState::GamePlay:
 			{
-				window.draw(ball);
+				if (leftPaddle.isMoving())
+					leftPaddle.move(leftPaddle.getSpeed());
+
+				if (rightPaddle.isMoving())
+					rightPaddle.move(rightPaddle.getSpeed());
+				
+				window.draw(ball);	
 				window.draw(leftPaddle);
 				window.draw(rightPaddle);
 				break;
@@ -102,14 +104,23 @@ int main()
 					if (currentState == AppState::GamePlay)
 					{
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-							leftPaddle.moveUp();
+							leftPaddle.setSpeed(sf::Vector2f(0, -0.1));
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-							leftPaddle.moveDown();
+							leftPaddle.setSpeed(sf::Vector2f(0, 0.1));
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-							rightPaddle.moveDown();
+							rightPaddle.setSpeed(sf::Vector2f(0, 0.1));
 						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-							rightPaddle.moveUp();
+							rightPaddle.setSpeed(sf::Vector2f(0, 0.1));
 					}
+					break;
+				}
+
+				case sf::Event::KeyReleased:
+				{
+					if (event.key.code == sf::Keyboard::Key::A || event.key.code == sf::Keyboard::Key::D)
+						leftPaddle.setSpeed(sf::Vector2f(0, 0));
+					else if (event.key.code == sf::Keyboard::Key::Left || event.key.code == sf::Keyboard::Key::Right)
+						rightPaddle.setSpeed(sf::Vector2f(0, 0));
 					break;
 				}
 				default:
