@@ -95,27 +95,20 @@ int main()
 				{
 					if (playButton.isClicked(event, window))
 						currentState = AppState::GamePlay;
+					break;
 				}
 				case sf::Event::KeyPressed:
 				{
 					if (currentState == AppState::GamePlay)
 					{
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && leftPaddle.getPosition().y >= 0)
-						{
-							leftPaddle.move(-paddleSpeed);
-						}
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) && leftPaddle.getPosition().y <= 536)
-						{
-							leftPaddle.move(paddleSpeed);
-						}
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) && rightPaddle.getPosition().y <= 536)
-						{
-							rightPaddle.move(paddleSpeed);
-						}
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) && rightPaddle.getPosition().y >= 0)
-						{
-							rightPaddle.move(-paddleSpeed);
-						}
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+							leftPaddle.moveUp();
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+							leftPaddle.moveDown();
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+							rightPaddle.moveDown();
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+							rightPaddle.moveUp();
 					}
 					break;
 				}
