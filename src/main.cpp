@@ -3,6 +3,8 @@
 
 #include "AppState.hpp"
 #include "Button.hpp"
+#include "Ball.hpp"
+#include "Paddle.hpp"
 
 int main()
 {
@@ -25,31 +27,12 @@ int main()
 
 	playButton.setPosition((screenWidth - wid) / 2, (screenHeight - hei) / 2);
 
-	//Dummy message
-	sf::Text winMessage("You won!", mainFont);
-
-	//Create a dummy image
-	sf::Image whiteImg;
-	whiteImg.create(128, 128, sf::Color::White);
 	
-	//Create the white plain texture
-	sf::Texture whiteTexture;
-	whiteTexture.loadFromImage(whiteImg, sf::IntRect(0, 0, 8, 64));
-
-	sf::Sprite leftPaddle;
-	leftPaddle.setTexture(whiteTexture);
-	leftPaddle.setTextureRect(sf::IntRect(0, 0, 8, 64));
-	leftPaddle.setPosition(10, (screenHeight - 64) / 2);
-
-	sf::Sprite rightPaddle;
-	rightPaddle.setTexture(whiteTexture);
-	rightPaddle.setTextureRect(sf::IntRect(0, 0, 8, 64));
-	rightPaddle.setPosition(screenWidth - 18, (screenHeight - 64) / 2);
-
-	sf::Sprite ball;
-	ball.setTexture(whiteTexture);
-	ball.setTextureRect(sf::IntRect(0, 0, 8, 8));
-	ball.setPosition((screenWidth - 8) / 2, (screenHeight - 8) / 2);
+	//Create paddles and ball
+	ping::Paddle leftPaddle(sf::Vector2f(10, 268), sf::Vector2i(8, 64));
+	ping::Paddle rightPaddle(sf::Vector2f(782, 268), sf::Vector2i(8, 64));
+	
+	ping::Ball ball;
 
 	using ping::AppState;
 	ping::AppState currentState = ping::AppState::SettingsMenu;

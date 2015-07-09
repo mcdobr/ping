@@ -6,12 +6,15 @@
 
 namespace ping
 {
-
 	class Game
 	{
 		Ball ball;
-		Paddle leftPaddle, rightPaddle;
+		//Paddle leftPaddle, rightPaddle;
 	public:
+		Game();
+
 		bool collision();
+		void reset();
 	};
 }
+#endif
