@@ -45,15 +45,12 @@ namespace ping
 	}
 
 	//"REAL" functions
-	void Paddle::moveUp()
+	bool Paddle::canMove(const sf::Vector2f& speed)
 	{
-		if (this -> getPosition().y >= 0)
-			this -> move(-paddleSpeed);
-	}
-
-	void Paddle::moveDown()
-	{
-		if (this -> getPosition().y <= 536)
-			this -> move(paddleSpeed);
+		if (this -> getPosition().y + speed.y < 0.0)
+			return false;
+		if (this -> getPosition().y + speed.y > 536.0)
+			return false;
+		return true;
 	}
 }

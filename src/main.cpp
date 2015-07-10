@@ -44,15 +44,22 @@ int main()
 			case AppState::GamePlay:
 			{
 
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()))
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()) && leftPaddle.canMove(sf::Vector2f(0, -0.3)))
 					leftPaddle.move(0, -0.3);
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()))
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()) && leftPaddle.canMove(sf::Vector2f(0, 0.3)))
 					leftPaddle.move(0, 0.3);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()))
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()) && rightPaddle.canMove(sf::Vector2f(0, -0.3)))
 					rightPaddle.move(0, -0.3);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()))
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 0.3)))
 					rightPaddle.move(0, 0.3);
 
+					
+				ball.move(ball.getSpeed());
+
+				if (ball.getGlobalBounds().intersects(leftPaddle.getGlobalBounds()) || ball.getGlobalBounds().intersects(rightPaddle.getGlobalBounds()))
+					ball.getSpeed().x *= -1.0;
+
+			
 				window.draw(ball);	
 				window.draw(leftPaddle);
 				window.draw(rightPaddle);
@@ -100,7 +107,10 @@ int main()
 				case sf::Event::MouseButtonPressed:
 				{
 					if (playButton.isClicked(event, window))
+					{
 						currentState = AppState::GamePlay;
+						ball.setSpeed(sf::Vector2f(0.1, 0.0));
+					}
 					break;
 				}
 				default:

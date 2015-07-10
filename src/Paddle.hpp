@@ -28,10 +28,8 @@ namespace ping
 		sf::Keyboard::Key& getUpKey();
 		sf::Keyboard::Key& getDownKey();
 
-
 		//"REAL" functions
-		void moveUp();
-		void moveDown();
+		bool canMove(const sf::Vector2f& speed);
 	};
 }
 #endif

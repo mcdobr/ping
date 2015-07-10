@@ -17,6 +17,11 @@ namespace ping
 
 	public:
 		Ball();
+
+		//Getters
+		sf::Vector2f& getSpeed();
+		//Setters
+		void setSpeed(const sf::Vector2f& _speed);
 	};
 }
 
