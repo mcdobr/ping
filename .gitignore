@@ -1,0 +1,2 @@
+# Make git ignore any executables
+bin/*
