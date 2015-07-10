@@ -26,8 +26,8 @@ int main()
 	playButton.setPosition((screenWidth - wid) / 2, (screenHeight - hei) / 2);
 
 	//Create paddles and ball
-	ping::Paddle leftPaddle(sf::Vector2f(10, 268), sf::Vector2i(8, 64));
-	ping::Paddle rightPaddle(sf::Vector2f(782, 268), sf::Vector2i(8, 64));
+	ping::Paddle leftPaddle(sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
+	ping::Paddle rightPaddle(sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
 	ping::Ball ball;
 
 	using ping::AppState;
@@ -43,12 +43,16 @@ int main()
 		{
 			case AppState::GamePlay:
 			{
-				if (leftPaddle.isMoving())
-					leftPaddle.move(leftPaddle.getSpeed());
 
-				if (rightPaddle.isMoving())
-					rightPaddle.move(rightPaddle.getSpeed());
-				
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()))
+					leftPaddle.move(0, -0.3);
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()))
+					leftPaddle.move(0, 0.3);
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()))
+					rightPaddle.move(0, -0.3);
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()))
+					rightPaddle.move(0, 0.3);
+
 				window.draw(ball);	
 				window.draw(leftPaddle);
 				window.draw(rightPaddle);
@@ -97,30 +101,6 @@ int main()
 				{
 					if (playButton.isClicked(event, window))
 						currentState = AppState::GamePlay;
-					break;
-				}
-				case sf::Event::KeyPressed:
-				{
-					if (currentState == AppState::GamePlay)
-					{
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-							leftPaddle.setSpeed(sf::Vector2f(0, -0.1));
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-							leftPaddle.setSpeed(sf::Vector2f(0, 0.1));
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-							rightPaddle.setSpeed(sf::Vector2f(0, 0.1));
-						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-							rightPaddle.setSpeed(sf::Vector2f(0, 0.1));
-					}
-					break;
-				}
-
-				case sf::Event::KeyReleased:
-				{
-					if (event.key.code == sf::Keyboard::Key::A || event.key.code == sf::Keyboard::Key::D)
-						leftPaddle.setSpeed(sf::Vector2f(0, 0));
-					else if (event.key.code == sf::Keyboard::Key::Left || event.key.code == sf::Keyboard::Key::Right)
-						rightPaddle.setSpeed(sf::Vector2f(0, 0));
 					break;
 				}
 				default:
