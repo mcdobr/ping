@@ -4,9 +4,9 @@ namespace ping
 {
 	const sf::Vector2f Paddle::paddleSpeed = sf::Vector2f(0, 15);
 
-	Paddle::Paddle(const sf::Vector2f& position, const sf::Vector2i& size, const sf::Keyboard::Key& _upKey, const sf::Keyboard::Key& _downKey)
+	Paddle::Paddle(const sf::Texture& texture, const sf::Vector2f& position, const sf::Vector2i& size, const sf::Keyboard::Key& _upKey, const sf::Keyboard::Key& _downKey)
 	{
-		this -> setTexture(getTextureFromColor(sf::Color::White));
+		this -> setTexture(texture);
 		this -> setTextureRect(sf::IntRect(sf::Vector2i(0, 0), size));
 		this -> setPosition(position);
 		this -> setSpeed(sf::Vector2f(0, 0));

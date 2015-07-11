@@ -4,8 +4,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
-#include "AppState.hpp"
-
 namespace ping
 {
 	class Paddle : public sf::Sprite
@@ -17,7 +15,7 @@ namespace ping
 		bool isInMovement;
 
 	public:
-		Paddle(const sf::Vector2f&, const sf::Vector2i&, const sf::Keyboard::Key&, const sf::Keyboard::Key&);
+		Paddle(const sf::Texture&, const sf::Vector2f&, const sf::Vector2i&, const sf::Keyboard::Key&, const sf::Keyboard::Key&);
 
 		//Setters
 		void setSpeed(const sf::Vector2f&);

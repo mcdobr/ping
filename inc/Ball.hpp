@@ -4,8 +4,6 @@
 #include <random>
 #include <SFML/Graphics.hpp>
 
-#include "AppState.hpp"
-
 namespace ping
 {
 	class Ball : public sf::Sprite
@@ -16,7 +14,7 @@ namespace ping
 		sf::Vector2f speed;
 
 	public:
-		Ball();
+		Ball(const sf::Texture&);
 
 		//Getters
 		sf::Vector2f& getSpeed();
