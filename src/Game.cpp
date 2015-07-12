@@ -5,11 +5,17 @@ namespace ping
 	Game::Game()
 	{
 		screenWidth = 800; screenHeight = 600;
-		
-		window.create(sf::VideoMode(screenWidth, screenHeight), /*gameName*/"Ping");
+	
+		currentState = GameState::MainMenu;
+
+		window.create(sf::VideoMode(screenWidth, screenHeight), "Ping");
 		window.setVerticalSyncEnabled(true);
 		
 		font.loadFromFile("Armageda Wide.ttf");
+
+		playButton.setString("PLAY");
+		playButton.setFont(font);
+		playButton.setCharacterSize(30);
 	}
 	
 	void Game::display()
@@ -55,7 +61,7 @@ namespace ping
 			{
 				break;
 			}
-			case GameState::SettingsMenu:
+			case GameState::MainMenu:
 			{
 				if (playButton.isHoveredOver(window))	
 					playButton.setColor(sf::Color::Red);
@@ -96,7 +102,7 @@ namespace ping
 				}
 				default:
 				{
-				break;
+					break;
 				}
 			}
 		}
@@ -105,9 +111,6 @@ namespace ping
 	//Need to refactor this as well
 	int Game::run()
 	{
-		//Button prototype
-		ping::GameMenu::Button playButton("PLAY", font);
-
 		int wid = playButton.getLocalBounds().width;
 		int hei = playButton.getLocalBounds().height;
 

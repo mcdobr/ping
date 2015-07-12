@@ -14,6 +14,7 @@ namespace ping {
 			using Text::Text;
 		public:
 			//Constructor needed because of VS 2013 compiler being slow to implement c++11 features
+			Button();
 			Button(const sf::String&, const sf::Font&);
 
 			bool isClicked(const sf::Event&, const sf::RenderWindow&) const;

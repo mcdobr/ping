@@ -16,7 +16,7 @@ namespace ping
 	{
 		GamePlay,
 		GameOver,
-		SettingsMenu,
+		MainMenu,
 		VideoMenu,
 		AudioMenu
 	};
@@ -26,10 +26,13 @@ namespace ping
 		//static const std::string gameName = "Ping";
 
 		unsigned int screenWidth, screenHeight;
+		
+		GameMenu::Button playButton;
 		GameState currentState;
-		ping::GameMenu::Button playButton;
+		
 		sf::RenderWindow window;		
 		sf::Font font;
+
 
 	public:
 		Game();

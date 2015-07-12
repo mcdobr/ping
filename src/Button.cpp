@@ -4,6 +4,10 @@ namespace ping
 {
 	namespace GameMenu
 	{
+		Button::Button()
+		{
+		}
+
 		Button::Button(const sf::String &string, const sf::Font &font)
 		{
 			this->setString(string);
