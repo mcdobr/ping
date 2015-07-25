@@ -15,6 +15,7 @@ namespace ping
 		bool isInMovement;
 
 	public:
+		Paddle();
 		Paddle(const sf::Texture&, const sf::Vector2f&, const sf::Vector2i&, const sf::Keyboard::Key&, const sf::Keyboard::Key&);
 
 		//Setters

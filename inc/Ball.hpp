@@ -14,6 +14,7 @@ namespace ping
 		sf::Vector2f speed;
 
 	public:
+		Ball();
 		Ball(const sf::Texture&);
 
 		//Getters

@@ -9,6 +9,10 @@ namespace ping
 	std::mt19937 mt(rd());
 	std::uniform_real_distribution<float> fdistrib(0.1, 0.4);
 
+	Ball::Ball()
+	{
+	}
+
 	Ball::Ball(const sf::Texture& texture)
 	{
 		this->setTexture(texture);

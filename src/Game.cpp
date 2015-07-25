@@ -6,7 +6,7 @@ namespace ping
 	{
 		screenWidth = 800; screenHeight = 600;
 	
-		currentState = GameState::MainMenu;
+		currentState = GameState::GamePlay;
 
 		window.create(sf::VideoMode(screenWidth, screenHeight), "Ping");
 		window.setVerticalSyncEnabled(true);
@@ -16,16 +16,15 @@ namespace ping
 		playButton.setString("PLAY");
 		playButton.setFont(font);
 		playButton.setCharacterSize(30);
+		
+		//Create paddles and ball
+		ping::Paddle leftPaddle = Paddle(getTextureFromColor(sf::Color::White), sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
+		ping::Paddle rightPaddle = Paddle(getTextureFromColor(sf::Color::White), sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
+		ping::Ball ball = Ball(getTextureFromColor(sf::Color::White));
 	}
 	
 	void Game::display()
 	{
-		//Create paddles and ball
-		ping::Paddle leftPaddle(getTextureFromColor(sf::Color::White), sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
-		ping::Paddle rightPaddle(getTextureFromColor(sf::Color::White), sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
-		ping::Ball ball(getTextureFromColor(sf::Color::White));
-
-
 		window.clear();
 
 		//Draw stuff on screen

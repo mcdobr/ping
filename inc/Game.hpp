@@ -29,7 +29,10 @@ namespace ping
 		
 		GameMenu::Button playButton;
 		GameState currentState;
-		
+
+		Paddle leftPaddle, rightPaddle;
+		Ball ball;
+
 		sf::RenderWindow window;		
 		sf::Font font;
 
