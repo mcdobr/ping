@@ -3,6 +3,7 @@
 
 #include <cmath>
 #include <string>
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -37,6 +38,9 @@ namespace ping
 		sf::RenderWindow window;		
 		sf::Font font;
 		sf::Texture whiteTexture;
+
+		sf::SoundBuffer soundBuffer;
+		sf::Sound boopSound;
 
 	public:
 		Game();

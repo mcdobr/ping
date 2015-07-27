@@ -20,7 +20,6 @@ namespace ping
 		//Create the white texture
 		sf::Image img;
 		img.create(128, 128, sf::Color::White);
-		
 		//Create plain texture
 		whiteTexture.loadFromImage(img, sf::IntRect(0, 0, 8, 64));
 
@@ -28,6 +27,10 @@ namespace ping
 		leftPaddle = Paddle(whiteTexture, sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
 		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
 		ball = Ball(whiteTexture);
+	
+		//Initialize sound handling part 
+		soundBuffer.loadFromFile("boop_soundFX.wav");
+		boopSound.setBuffer(soundBuffer);
 	}
 
 	void Game::handleCollisions()
@@ -51,6 +54,8 @@ namespace ping
 		if (hitPaddle)
 		{
 			ball.getSpeed().x *= -1;
+
+			boopSound.play();
 		}
 	}
 
