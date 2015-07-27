@@ -30,7 +30,6 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ping
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">(eventual) pong clone</div>
   </td>
@@ -47,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classping_1_1_paddle.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,6 +112,8 @@ $(document).ready(function(){initNavTree('classping_1_1_paddle.html','');});
 <div class="title">ping::Paddle Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_paddle_8hpp_source.html">Paddle.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ping::Paddle:</div>
 <div class="dyncontent">
@@ -122,39 +125,187 @@ Inheritance diagram for ping::Paddle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab720dbd41538b5bb84cd32439add2077"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab720dbd41538b5bb84cd32439add2077"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Paddle</b> (const sf::Vector2f &amp;, const sf::Vector2i &amp;, const sf::Keyboard::Key &amp;, const sf::Keyboard::Key &amp;)</td></tr>
-<tr class="separator:ab720dbd41538b5bb84cd32439add2077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa691271f0e6333857a8008582a27e279"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa691271f0e6333857a8008582a27e279"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpeed</b> (const sf::Vector2f &amp;)</td></tr>
+<tr class="memitem:ab2512fe9a3eb6d87d6ed0dd3b29e9d55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#ab2512fe9a3eb6d87d6ed0dd3b29e9d55">Paddle</a> ()</td></tr>
+<tr class="separator:ab2512fe9a3eb6d87d6ed0dd3b29e9d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae33f522e171dacc38e154e550e41ee2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#aae33f522e171dacc38e154e550e41ee2">Paddle</a> (const sf::Texture &amp;, const sf::Vector2f &amp;, const sf::Vector2i &amp;, const sf::Keyboard::Key &amp;, const sf::Keyboard::Key &amp;)</td></tr>
+<tr class="separator:aae33f522e171dacc38e154e550e41ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa691271f0e6333857a8008582a27e279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#aa691271f0e6333857a8008582a27e279">setSpeed</a> (const sf::Vector2f &amp;)</td></tr>
 <tr class="separator:aa691271f0e6333857a8008582a27e279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90cfde8988d04388713a47f3e2349ab1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90cfde8988d04388713a47f3e2349ab1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isMoving</b> ()</td></tr>
+<tr class="memitem:a90cfde8988d04388713a47f3e2349ab1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#a90cfde8988d04388713a47f3e2349ab1">isMoving</a> ()</td></tr>
 <tr class="separator:a90cfde8988d04388713a47f3e2349ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d2dfc16dbb676ecfdc6ee311bb8369f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d2dfc16dbb676ecfdc6ee311bb8369f"></a>
-sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSpeed</b> ()</td></tr>
+<tr class="memitem:a5d2dfc16dbb676ecfdc6ee311bb8369f"><td class="memItemLeft" align="right" valign="top">sf::Vector2f &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#a5d2dfc16dbb676ecfdc6ee311bb8369f">getSpeed</a> ()</td></tr>
 <tr class="separator:a5d2dfc16dbb676ecfdc6ee311bb8369f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54ea087a9d239ec83bc3cb397caf9dd7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54ea087a9d239ec83bc3cb397caf9dd7"></a>
-sf::Keyboard::Key &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getUpKey</b> ()</td></tr>
+<tr class="memitem:a54ea087a9d239ec83bc3cb397caf9dd7"><td class="memItemLeft" align="right" valign="top">sf::Keyboard::Key &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#a54ea087a9d239ec83bc3cb397caf9dd7">getUpKey</a> ()</td></tr>
 <tr class="separator:a54ea087a9d239ec83bc3cb397caf9dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31c518c90da3f255dadeeabc5c5d1459"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31c518c90da3f255dadeeabc5c5d1459"></a>
-sf::Keyboard::Key &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getDownKey</b> ()</td></tr>
+<tr class="memitem:a31c518c90da3f255dadeeabc5c5d1459"><td class="memItemLeft" align="right" valign="top">sf::Keyboard::Key &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#a31c518c90da3f255dadeeabc5c5d1459">getDownKey</a> ()</td></tr>
 <tr class="separator:a31c518c90da3f255dadeeabc5c5d1459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98f45ea408edc671ea9764ea4239ef28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98f45ea408edc671ea9764ea4239ef28"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>canMove</b> (const sf::Vector2f &amp;speed)</td></tr>
+<tr class="memitem:a98f45ea408edc671ea9764ea4239ef28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_paddle.html#a98f45ea408edc671ea9764ea4239ef28">canMove</a> (const sf::Vector2f &amp;speed)</td></tr>
 <tr class="separator:a98f45ea408edc671ea9764ea4239ef28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab2512fe9a3eb6d87d6ed0dd3b29e9d55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ping::Paddle::Paddle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae33f522e171dacc38e154e550e41ee2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ping::Paddle::Paddle </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Texture &amp;&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2i &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Keyboard::Key &amp;&#160;</td>
+          <td class="paramname"><em>_upKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Keyboard::Key &amp;&#160;</td>
+          <td class="paramname"><em>_downKey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a98f45ea408edc671ea9764ea4239ef28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ping::Paddle::canMove </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>speed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31c518c90da3f255dadeeabc5c5d1459"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Keyboard::Key &amp; ping::Paddle::getDownKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5d2dfc16dbb676ecfdc6ee311bb8369f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f &amp; ping::Paddle::getSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a54ea087a9d239ec83bc3cb397caf9dd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Keyboard::Key &amp; ping::Paddle::getUpKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a90cfde8988d04388713a47f3e2349ab1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ping::Paddle::isMoving </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa691271f0e6333857a8008582a27e279"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ping::Paddle::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>_speed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>inc/<a class="el" href="_paddle_8hpp_source.html">Paddle.hpp</a></li>
-<li>src/Paddle.cpp</li>
+<li>src/<a class="el" href="_paddle_8cpp.html">Paddle.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ping</b></li><li class="navelem"><a class="el" href="classping_1_1_paddle.html">Paddle</a></li>
-    <li class="footer">Generated on Fri Jul 10 2015 14:26:59 for ping by
+    <li class="navelem"><a class="el" href="namespaceping.html">ping</a></li><li class="navelem"><a class="el" href="classping_1_1_paddle.html">Paddle</a></li>
+    <li class="footer">Generated on Mon Jul 27 2015 20:33:54 for ping by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

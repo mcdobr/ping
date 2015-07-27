@@ -30,7 +30,6 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ping
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">(eventual) pong clone</div>
   </td>
@@ -47,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classping_1_1_game.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,32 +107,145 @@ $(document).ready(function(){initNavTree('classping_1_1_game.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classping_1_1_game-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ping::Game Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_game_8hpp_source.html">Game.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aae49142aae1be1488808958efbdc845e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae49142aae1be1488808958efbdc845e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>collision</b> ()</td></tr>
-<tr class="separator:aae49142aae1be1488808958efbdc845e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae4d0fa0aa13268862d299e89420b07b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aae4d0fa0aa13268862d299e89420b07b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
-<tr class="separator:aae4d0fa0aa13268862d299e89420b07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804102edf0824210eb72f6bcc6de75b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#a804102edf0824210eb72f6bcc6de75b2">Game</a> ()</td></tr>
+<tr class="separator:a804102edf0824210eb72f6bcc6de75b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71146555d7843b1ab81bf3c0db958b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#a71146555d7843b1ab81bf3c0db958b83">handleCollisions</a> ()</td></tr>
+<tr class="separator:a71146555d7843b1ab81bf3c0db958b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42c906d785ca85878a62194a3e177e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#ad42c906d785ca85878a62194a3e177e7">display</a> ()</td></tr>
+<tr class="separator:ad42c906d785ca85878a62194a3e177e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3781f80e33377df2e22fed3921e5625c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#a3781f80e33377df2e22fed3921e5625c">handleEvents</a> ()</td></tr>
+<tr class="separator:a3781f80e33377df2e22fed3921e5625c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953583494a5c40f99458fa4d60c87f65"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#a953583494a5c40f99458fa4d60c87f65">run</a> ()</td></tr>
+<tr class="separator:a953583494a5c40f99458fa4d60c87f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa1d2c043afaebb2a98e8e58556570cc3"><td class="memItemLeft" align="right" valign="top">static sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classping_1_1_game.html#aa1d2c043afaebb2a98e8e58556570cc3">getTextureFromColor</a> (const sf::Color &amp;)</td></tr>
+<tr class="separator:aa1d2c043afaebb2a98e8e58556570cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a804102edf0824210eb72f6bcc6de75b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ping::Game::Game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad42c906d785ca85878a62194a3e177e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ping::Game::display </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa1d2c043afaebb2a98e8e58556570cc3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static sf::Texture ping::Game::getTextureFromColor </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Color &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a71146555d7843b1ab81bf3c0db958b83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ping::Game::handleCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3781f80e33377df2e22fed3921e5625c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ping::Game::handleEvents </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a953583494a5c40f99458fa4d60c87f65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ping::Game::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>inc/<a class="el" href="_game_8hpp_source.html">Game.hpp</a></li>
-<li>src/Game.cpp</li>
+<li>src/<a class="el" href="_game_8cpp.html">Game.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ping</b></li><li class="navelem"><a class="el" href="classping_1_1_game.html">Game</a></li>
-    <li class="footer">Generated on Fri Jul 10 2015 14:26:59 for ping by
+    <li class="navelem"><a class="el" href="namespaceping.html">ping</a></li><li class="navelem"><a class="el" href="classping_1_1_game.html">Game</a></li>
+    <li class="footer">Generated on Mon Jul 27 2015 20:33:54 for ping by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

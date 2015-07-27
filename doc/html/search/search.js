@@ -7,10 +7,28 @@
 
 var indexSectionsWithContent =
 {
+  0: "abcdfghimprsv",
+  1: "bgp",
+  2: "p",
+  3: "bgmpr",
+  4: "bcdfghimprs",
+  5: "cdfrs",
+  6: "g",
+  7: "agmv",
+  8: "p"
 };
 
 var indexSectionNames =
 {
+  0: "all",
+  1: "classes",
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "enums",
+  7: "enumvalues",
+  8: "pages"
 };
 
 function convertToId(search)

@@ -30,7 +30,6 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ping
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">(eventual) pong clone</div>
   </td>
@@ -47,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classping_1_1_game_menu_1_1_button.htm
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,15 +112,16 @@ $(document).ready(function(){initNavTree('classping_1_1_game_menu_1_1_button.htm
 
 <p>This is the complete list of members for <a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Button</b>(const sf::String &amp;, const sf::Font &amp;) (defined in <a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a>)</td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>isClicked</b>(const sf::Event &amp;, const sf::RenderWindow &amp;) const  (defined in <a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a>)</td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>isHoveredOver</b>(const sf::RenderWindow &amp;) const  (defined in <a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a>)</td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html#a4ccc21b7cff858167dbb8784a6766b6c">Button</a>()</td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html#aaa2076b2a6899fd54e8977d6633ee722">Button</a>(const sf::String &amp;, const sf::Font &amp;)</td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html#a476278726219e0ffdc9ed50139116a5c">isClicked</a>(const sf::Event &amp;, const sf::RenderWindow &amp;) const </td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html#a925f77c5adf2d19b5d211a4db7e9757d">isHoveredOver</a>(const sf::RenderWindow &amp;) const </td><td class="entry"><a class="el" href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jul 10 2015 14:26:59 for ping by
+    <li class="footer">Generated on Mon Jul 27 2015 20:33:54 for ping by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

@@ -30,7 +30,6 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ping
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">(eventual) pong clone</div>
   </td>
@@ -47,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('_paddle_8hpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,49 +107,55 @@ $(document).ready(function(){initNavTree('_paddle_8hpp_source.html','');});
 <div class="title">Paddle.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PADDLE_HPP</span></div>
+<a href="_paddle_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PADDLE_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PADDLE_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;AppState.hpp&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>ping</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classping_1_1_paddle.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classping_1_1_paddle.html">Paddle</a> : <span class="keyword">public</span> sf::Sprite</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> sf::Vector2f paddleSpeed;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        sf::Vector2f speed;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        sf::Keyboard::Key upKey, downKey;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">bool</span> isInMovement;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classping_1_1_paddle.html">Paddle</a>(<span class="keyword">const</span> sf::Vector2f&amp;, <span class="keyword">const</span> sf::Vector2i&amp;, <span class="keyword">const</span> sf::Keyboard::Key&amp;, <span class="keyword">const</span> sf::Keyboard::Key&amp;);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//Setters</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> setSpeed(<span class="keyword">const</span> sf::Vector2f&amp;);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//Getters</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> isMoving();    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        sf::Vector2f&amp; getSpeed();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        sf::Keyboard::Key&amp; getUpKey();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        sf::Keyboard::Key&amp; getDownKey();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//&quot;REAL&quot; functions</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">bool</span> canMove(<span class="keyword">const</span> sf::Vector2f&amp; speed);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    };</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classping_1_1_paddle_html"><div class="ttname"><a href="classping_1_1_paddle.html">ping::Paddle</a></div><div class="ttdef"><b>Definition:</b> Paddle.hpp:11</div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>ping</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classping_1_1_paddle.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classping_1_1_paddle.html">Paddle</a> : <span class="keyword">public</span> sf::Sprite</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> sf::Vector2f paddleSpeed;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        sf::Vector2f speed;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        sf::Keyboard::Key upKey, downKey;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">bool</span> isInMovement;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classping_1_1_paddle.html#ab2512fe9a3eb6d87d6ed0dd3b29e9d55">Paddle</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classping_1_1_paddle.html#ab2512fe9a3eb6d87d6ed0dd3b29e9d55">Paddle</a>(<span class="keyword">const</span> sf::Texture&amp;, <span class="keyword">const</span> sf::Vector2f&amp;, <span class="keyword">const</span> sf::Vector2i&amp;, <span class="keyword">const</span> sf::Keyboard::Key&amp;, <span class="keyword">const</span> sf::Keyboard::Key&amp;);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//Setters</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classping_1_1_paddle.html#aa691271f0e6333857a8008582a27e279">setSpeed</a>(<span class="keyword">const</span> sf::Vector2f&amp;);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classping_1_1_paddle.html#a90cfde8988d04388713a47f3e2349ab1">isMoving</a>();    </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        sf::Vector2f&amp; <a class="code" href="classping_1_1_paddle.html#a5d2dfc16dbb676ecfdc6ee311bb8369f">getSpeed</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        sf::Keyboard::Key&amp; <a class="code" href="classping_1_1_paddle.html#a54ea087a9d239ec83bc3cb397caf9dd7">getUpKey</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        sf::Keyboard::Key&amp; <a class="code" href="classping_1_1_paddle.html#a31c518c90da3f255dadeeabc5c5d1459">getDownKey</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">//&quot;REAL&quot; functions</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classping_1_1_paddle.html#a98f45ea408edc671ea9764ea4239ef28">canMove</a>(<span class="keyword">const</span> sf::Vector2f&amp; speed);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classping_1_1_paddle_html_ab2512fe9a3eb6d87d6ed0dd3b29e9d55"><div class="ttname"><a href="classping_1_1_paddle.html#ab2512fe9a3eb6d87d6ed0dd3b29e9d55">ping::Paddle::Paddle</a></div><div class="ttdeci">Paddle()</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:7</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_a90cfde8988d04388713a47f3e2349ab1"><div class="ttname"><a href="classping_1_1_paddle.html#a90cfde8988d04388713a47f3e2349ab1">ping::Paddle::isMoving</a></div><div class="ttdeci">bool isMoving()</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:33</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_a31c518c90da3f255dadeeabc5c5d1459"><div class="ttname"><a href="classping_1_1_paddle.html#a31c518c90da3f255dadeeabc5c5d1459">ping::Paddle::getDownKey</a></div><div class="ttdeci">sf::Keyboard::Key &amp; getDownKey()</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:46</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_a5d2dfc16dbb676ecfdc6ee311bb8369f"><div class="ttname"><a href="classping_1_1_paddle.html#a5d2dfc16dbb676ecfdc6ee311bb8369f">ping::Paddle::getSpeed</a></div><div class="ttdeci">sf::Vector2f &amp; getSpeed()</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:38</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_a98f45ea408edc671ea9764ea4239ef28"><div class="ttname"><a href="classping_1_1_paddle.html#a98f45ea408edc671ea9764ea4239ef28">ping::Paddle::canMove</a></div><div class="ttdeci">bool canMove(const sf::Vector2f &amp;speed)</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:52</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_aa691271f0e6333857a8008582a27e279"><div class="ttname"><a href="classping_1_1_paddle.html#aa691271f0e6333857a8008582a27e279">ping::Paddle::setSpeed</a></div><div class="ttdeci">void setSpeed(const sf::Vector2f &amp;)</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:23</div></div>
+<div class="ttc" id="classping_1_1_paddle_html_a54ea087a9d239ec83bc3cb397caf9dd7"><div class="ttname"><a href="classping_1_1_paddle.html#a54ea087a9d239ec83bc3cb397caf9dd7">ping::Paddle::getUpKey</a></div><div class="ttdeci">sf::Keyboard::Key &amp; getUpKey()</div><div class="ttdef"><b>Definition:</b> Paddle.cpp:42</div></div>
+<div class="ttc" id="classping_1_1_paddle_html"><div class="ttname"><a href="classping_1_1_paddle.html">ping::Paddle</a></div><div class="ttdef"><b>Definition:</b> Paddle.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>Paddle.hpp</b></li>
-    <li class="footer">Generated on Fri Jul 10 2015 14:26:59 for ping by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="_paddle_8hpp.html">Paddle.hpp</a></li>
+    <li class="footer">Generated on Mon Jul 27 2015 20:33:54 for ping by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>

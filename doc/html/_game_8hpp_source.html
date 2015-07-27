@@ -30,7 +30,6 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ping
-   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">(eventual) pong clone</div>
   </td>
@@ -47,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('_game_8hpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,35 +107,88 @@ $(document).ready(function(){initNavTree('_game_8hpp_source.html','');});
 <div class="title">Game.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_HPP</span></div>
+<a href="_game_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_HPP</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAME_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Ball.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;Paddle.hpp&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>ping</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classping_1_1_game.html">    9</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classping_1_1_game.html">Game</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classping_1_1_ball.html">Ball</a> ball;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="comment">//Paddle leftPaddle, rightPaddle;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classping_1_1_game.html">Game</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">bool</span> collision();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> reset();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classping_1_1_ball_html"><div class="ttname"><a href="classping_1_1_ball.html">ping::Ball</a></div><div class="ttdef"><b>Definition:</b> Ball.hpp:11</div></div>
-<div class="ttc" id="classping_1_1_game_html"><div class="ttname"><a href="classping_1_1_game.html">ping::Game</a></div><div class="ttdef"><b>Definition:</b> Game.hpp:9</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;SFML/Audio.hpp&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;SFML/System.hpp&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;SFML/Window.hpp&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_ball_8hpp.html">Ball.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_button_8hpp.html">Button.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_paddle_8hpp.html">Paddle.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ping</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespaceping.html#a53665d142026e2b616016359de41ffbc">   17</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbc">GameState</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbcacc804f6412d7f0b95961d7eee6e50619">GamePlay</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbca8f347bc7cebca9fa6d97e70c6bc29eb3">GameOver</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbcaad1111b48f98329333237912fc3b371b">MainMenu</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbca0e5c170a9eef2bf238e40b779e55d950">VideoMenu</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbcae376821fccabea97b521eada5a88bc7d">AudioMenu</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classping_1_1_game.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classping_1_1_game.html">Game</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//static const std::string gameName = &quot;Ping&quot;;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> screenWidth, screenHeight;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classping_1_1_game_menu_1_1_button.html">GameMenu::Button</a> playButton;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="namespaceping.html#a53665d142026e2b616016359de41ffbc">GameState</a> currentState;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classping_1_1_paddle.html">Paddle</a> leftPaddle, rightPaddle;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classping_1_1_ball.html">Ball</a> ball;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        sf::RenderWindow window;        </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        sf::Font font;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        sf::Texture whiteTexture;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        sf::SoundBuffer soundBuffer;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        sf::Sound boopSound;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classping_1_1_game.html#a804102edf0824210eb72f6bcc6de75b2">Game</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classping_1_1_game.html#a71146555d7843b1ab81bf3c0db958b83">handleCollisions</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classping_1_1_game.html#ad42c906d785ca85878a62194a3e177e7">display</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classping_1_1_game.html#a3781f80e33377df2e22fed3921e5625c">handleEvents</a>();        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classping_1_1_game.html#a953583494a5c40f99458fa4d60c87f65">run</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">static</span> sf::Texture <a class="code" href="classping_1_1_game.html#aa1d2c043afaebb2a98e8e58556570cc3">getTextureFromColor</a>(<span class="keyword">const</span> sf::Color&amp;);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbc"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbc">ping::GameState</a></div><div class="ttdeci">GameState</div><div class="ttdef"><b>Definition:</b> Game.hpp:17</div></div>
+<div class="ttc" id="_ball_8hpp_html"><div class="ttname"><a href="_ball_8hpp.html">Ball.hpp</a></div></div>
+<div class="ttc" id="_button_8hpp_html"><div class="ttname"><a href="_button_8hpp.html">Button.hpp</a></div></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbcacc804f6412d7f0b95961d7eee6e50619"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbcacc804f6412d7f0b95961d7eee6e50619">ping::GameState::GamePlay</a></div></div>
+<div class="ttc" id="_paddle_8hpp_html"><div class="ttname"><a href="_paddle_8hpp.html">Paddle.hpp</a></div></div>
+<div class="ttc" id="classping_1_1_game_html_a71146555d7843b1ab81bf3c0db958b83"><div class="ttname"><a href="classping_1_1_game.html#a71146555d7843b1ab81bf3c0db958b83">ping::Game::handleCollisions</a></div><div class="ttdeci">void handleCollisions()</div><div class="ttdef"><b>Definition:</b> Game.cpp:36</div></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbca0e5c170a9eef2bf238e40b779e55d950"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbca0e5c170a9eef2bf238e40b779e55d950">ping::GameState::VideoMenu</a></div></div>
+<div class="ttc" id="classping_1_1_game_html_a804102edf0824210eb72f6bcc6de75b2"><div class="ttname"><a href="classping_1_1_game.html#a804102edf0824210eb72f6bcc6de75b2">ping::Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdef"><b>Definition:</b> Game.cpp:5</div></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbcae376821fccabea97b521eada5a88bc7d"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbcae376821fccabea97b521eada5a88bc7d">ping::GameState::AudioMenu</a></div></div>
+<div class="ttc" id="classping_1_1_ball_html"><div class="ttname"><a href="classping_1_1_ball.html">ping::Ball</a></div><div class="ttdef"><b>Definition:</b> Ball.hpp:9</div></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbcaad1111b48f98329333237912fc3b371b"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbcaad1111b48f98329333237912fc3b371b">ping::GameState::MainMenu</a></div></div>
+<div class="ttc" id="classping_1_1_game_html_a3781f80e33377df2e22fed3921e5625c"><div class="ttname"><a href="classping_1_1_game.html#a3781f80e33377df2e22fed3921e5625c">ping::Game::handleEvents</a></div><div class="ttdeci">void handleEvents()</div><div class="ttdef"><b>Definition:</b> Game.cpp:117</div></div>
+<div class="ttc" id="classping_1_1_game_html_aa1d2c043afaebb2a98e8e58556570cc3"><div class="ttname"><a href="classping_1_1_game.html#aa1d2c043afaebb2a98e8e58556570cc3">ping::Game::getTextureFromColor</a></div><div class="ttdeci">static sf::Texture getTextureFromColor(const sf::Color &amp;)</div></div>
+<div class="ttc" id="classping_1_1_game_menu_1_1_button_html"><div class="ttname"><a href="classping_1_1_game_menu_1_1_button.html">ping::GameMenu::Button</a></div><div class="ttdef"><b>Definition:</b> Button.hpp:12</div></div>
+<div class="ttc" id="classping_1_1_game_html_a953583494a5c40f99458fa4d60c87f65"><div class="ttname"><a href="classping_1_1_game.html#a953583494a5c40f99458fa4d60c87f65">ping::Game::run</a></div><div class="ttdeci">int run()</div><div class="ttdef"><b>Definition:</b> Game.cpp:144</div></div>
+<div class="ttc" id="namespaceping_html_a53665d142026e2b616016359de41ffbca8f347bc7cebca9fa6d97e70c6bc29eb3"><div class="ttname"><a href="namespaceping.html#a53665d142026e2b616016359de41ffbca8f347bc7cebca9fa6d97e70c6bc29eb3">ping::GameState::GameOver</a></div></div>
+<div class="ttc" id="classping_1_1_paddle_html"><div class="ttname"><a href="classping_1_1_paddle.html">ping::Paddle</a></div><div class="ttdef"><b>Definition:</b> Paddle.hpp:9</div></div>
+<div class="ttc" id="classping_1_1_game_html"><div class="ttname"><a href="classping_1_1_game.html">ping::Game</a></div><div class="ttdef"><b>Definition:</b> Game.hpp:26</div></div>
+<div class="ttc" id="classping_1_1_game_html_ad42c906d785ca85878a62194a3e177e7"><div class="ttname"><a href="classping_1_1_game.html#ad42c906d785ca85878a62194a3e177e7">ping::Game::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> Game.cpp:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><b>Game.hpp</b></li>
-    <li class="footer">Generated on Fri Jul 10 2015 14:26:59 for ping by
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="_game_8hpp.html">Game.hpp</a></li>
+    <li class="footer">Generated on Mon Jul 27 2015 20:33:54 for ping by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.7 </li>
   </ul>
