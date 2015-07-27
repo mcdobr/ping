@@ -1,6 +1,7 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <cmath>
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -35,11 +36,12 @@ namespace ping
 
 		sf::RenderWindow window;		
 		sf::Font font;
-
+		sf::Texture whiteTexture;
 
 	public:
 		Game();
-		
+
+		void handleCollisions();
 		void display();
 		void handleEvents();		
 		int run();

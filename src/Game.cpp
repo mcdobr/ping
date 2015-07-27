@@ -16,13 +16,44 @@ namespace ping
 		playButton.setString("PLAY");
 		playButton.setFont(font);
 		playButton.setCharacterSize(30);
-		
-		//Create paddles and ball
-		ping::Paddle leftPaddle = Paddle(getTextureFromColor(sf::Color::White), sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
-		ping::Paddle rightPaddle = Paddle(getTextureFromColor(sf::Color::White), sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
-		ping::Ball ball = Ball(getTextureFromColor(sf::Color::White));
-	}
 	
+		//Create the white texture
+		sf::Image img;
+		img.create(128, 128, sf::Color::White);
+		
+		//Create plain texture
+		whiteTexture.loadFromImage(img, sf::IntRect(0, 0, 8, 64));
+
+		//Create paddles and ball
+		leftPaddle = Paddle(whiteTexture, sf::Vector2f(10, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::A, sf::Keyboard::Key::D);
+		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64), sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
+		ball = Ball(whiteTexture);
+	}
+
+	void Game::handleCollisions()
+	{
+		//if the ball hits the top or the bottom of the screen
+		//if (ball.getGlobalBounds().top < ball.getSpeed().y || ball.getGlobalBounds().top == screenWidth - ball.getGlobalBounds().height)
+		if (ball.getPosition().y < fabs(ball.getSpeed().y) || fabs(ball.getPosition().y + ball.getGlobalBounds().height- screenHeight) < ball.getSpeed().y)
+		{
+			ball.getSpeed().y *= -1;
+			return;
+		}
+
+		//if the ball hits a paddle
+		Paddle* hitPaddle = nullptr;
+		if (ball.getGlobalBounds().intersects(leftPaddle.getGlobalBounds()))
+			hitPaddle = &leftPaddle;
+
+		if (ball.getGlobalBounds().intersects(rightPaddle.getGlobalBounds()))
+			hitPaddle = &rightPaddle;
+
+		if (hitPaddle)
+		{
+			ball.getSpeed().x *= -1;
+		}
+	}
+
 	void Game::display()
 	{
 		window.clear();
@@ -33,25 +64,22 @@ namespace ping
 			case GameState::GamePlay:
 			{
 				if (ball.getSpeed() == sf::Vector2f(0.0, 0.0))
-					ball.setSpeed(sf::Vector2f(0.1, 0.0));
+					ball.setSpeed(sf::Vector2f(2.0, -1.15));
 
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()) && leftPaddle.canMove(sf::Vector2f(0, -1)))
-					leftPaddle.move(0, -1);
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()) && leftPaddle.canMove(sf::Vector2f(0, 1)))
-					leftPaddle.move(0, 1);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()) && rightPaddle.canMove(sf::Vector2f(0, -1)))
-					rightPaddle.move(0, -1);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 1)))
-					rightPaddle.move(0, 1);
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()) && leftPaddle.canMove(sf::Vector2f(0, -2)))
+					leftPaddle.move(0, -2);
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()) && leftPaddle.canMove(sf::Vector2f(0, 2)))
+					leftPaddle.move(0, 2);
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()) && rightPaddle.canMove(sf::Vector2f(0, -2)))
+					rightPaddle.move(0, -2);
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 2)))
+					rightPaddle.move(0, 2);
 
-				
 				ball.move(ball.getSpeed());
 
-				if (ball.getGlobalBounds().intersects(leftPaddle.getGlobalBounds()) || ball.getGlobalBounds().intersects(rightPaddle.getGlobalBounds()))
-					ball.getSpeed().x *= -1.0;
-
-		
-				window.draw(ball);	
+				handleCollisions();
+				
+				window.draw(ball);
 				window.draw(leftPaddle);
 				window.draw(rightPaddle);
 				break;
@@ -122,17 +150,5 @@ namespace ping
 			handleEvents();
 		}
 		return 0;
-	}
-	
-	sf::Texture Game::getTextureFromColor(const sf::Color& color)
-	{
-		//create a dummy image
-		sf::Image img;
-		img.create(128, 128, color);
-		
-		//Create plain texture
-		sf::Texture texture;
-		texture.loadFromImage(img, sf::IntRect(0, 0, 8, 64));
-		return texture;
 	}
 }
