@@ -44,14 +44,21 @@ namespace ping
 		sf::SoundBuffer soundBuffer;
 		sf::Sound boopSound;
 
-	public:
-		Game();
-		
-		void reset();
+		//Private interface
 		void resetAssets();
+		void reset();
+
+		void drawScore();
+		void drawAssets();
+
+		void handleScore();
 		void handleCollisions();
+
 		void display();
 		void handleEvents();		
+
+	public:
+		Game();
 		int run();
 	};
 }

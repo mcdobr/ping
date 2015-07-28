@@ -43,6 +43,44 @@ namespace ping
 		resetAssets();
 	}
 
+	void Game::drawScore()
+	{
+		sf::Text lScore(std::to_string(score.first), font);
+		lScore.setPosition(100, 50);
+
+		sf::Text rScore(std::to_string(score.second), font);
+		rScore.setPosition(700, 50);
+		
+		window.draw(lScore);
+		window.draw(rScore);
+	}
+
+	void Game::drawAssets()
+	{
+		window.draw(ball);
+		window.draw(leftPaddle);
+		window.draw(rightPaddle);
+	}
+
+	void Game::handleScore()
+	{
+		//if Ball is outside screen
+		if (ball.isLeftOfScreen(window) || ball.isRightOfScreen(window))
+		{
+			if (ball.isLeftOfScreen(window))
+				++score.second;		
+			else
+				++score.first;
+		
+			//if game is over
+			if (score.first < 3 && score.second < 3)
+				resetAssets();
+			else
+				currentState = GameState::GameOver;
+		}
+	}
+	
+
 	void Game::handleCollisions()
 	{
 		//if the ball hits the top or the bottom of the screen
@@ -90,39 +128,13 @@ namespace ping
 				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 3)))
 					rightPaddle.move(0, 3);
 
-				//if Ball is outside screen
-				if (ball.isLeftOfScreen(window) || ball.isRightOfScreen(window))
-				{
-					if (ball.isLeftOfScreen(window))
-						++score.second;		
-					else
-						++score.first;
-				
-					//if game is over
-					if (score.first < 3 && score.second < 3)
-						resetAssets();
-					else
-						currentState = GameState::GameOver;
-				}
 				ball.move(ball.getSpeed());
+				
+				drawScore();
+				drawAssets();
 
+				handleScore();
 				handleCollisions();
-				
-				//will refactor later
-				//Draw score
-				sf::Text lScore(std::to_string(score.first), font);
-				lScore.setPosition(100, 50);
-
-				sf::Text rScore(std::to_string(score.second), font);
-				rScore.setPosition(700, 50);
-				
-				window.draw(lScore);
-				window.draw(rScore);
-
-				//Draw assets
-				window.draw(ball);
-				window.draw(leftPaddle);
-				window.draw(rightPaddle);
 				break;
 			}
 			case GameState::GameOver:
