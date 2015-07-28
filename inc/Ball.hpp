@@ -1,6 +1,7 @@
 #ifndef BALL_HPP
 #define BALL_HPP
 
+#include <cmath>
 #include <random>
 #include <SFML/Graphics.hpp>
 

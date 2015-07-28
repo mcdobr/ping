@@ -46,7 +46,8 @@ namespace ping
 
 	public:
 		Game();
-
+		
+		void reset();
 		void resetAssets();
 		void handleCollisions();
 		void display();

@@ -7,7 +7,8 @@ namespace ping
 	//Create a random number generator to set the initial speed of the ball
 	std::random_device rd;	
 	std::mt19937 mt(rd());
-	std::uniform_real_distribution<float> fdistrib(0.1, 0.4);
+	std::uniform_real_distribution<float> fDistrib(2.1, 3.4);
+	std::uniform_int_distribution<int> sgnDistrib(0, 1);
 
 	Ball::Ball()
 	{
@@ -18,6 +19,8 @@ namespace ping
 		this->setTexture(texture);
 		this->setTextureRect(sf::IntRect(0, 0, 8, 8));
 		this->setPosition(396, 296);
+		this->setSpeed(sf::Vector2f(fDistrib(mt) * std::pow(-1, sgnDistrib(mt)), 
+									fDistrib(rd) * std::pow(-1, sgnDistrib(mt))));
 	}
 
 	sf::Vector2f& Ball::getSpeed()

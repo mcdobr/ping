@@ -11,7 +11,8 @@ namespace ping
 
 		window.create(sf::VideoMode(screenWidth, screenHeight), "Ping");
 		window.setVerticalSyncEnabled(true);
-		
+		window.setFramerateLimit(60);
+
 		font.loadFromFile("Armageda Wide.ttf");
 
 		//Create the white texture
@@ -34,6 +35,12 @@ namespace ping
 		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64),
 							sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
 		ball = Ball(whiteTexture);
+	}
+
+	void Game::reset()
+	{
+		score = std::make_pair(0, 0);
+		resetAssets();
 	}
 
 	void Game::handleCollisions()
@@ -72,15 +79,15 @@ namespace ping
 			{
 
 				if (ball.getSpeed() == sf::Vector2f(0.0, 0.0))
-					ball.setSpeed(sf::Vector2f(3.0, -1.75));
+					ball.setSpeed(sf::Vector2f(3.0, -2.75));
 
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()) && leftPaddle.canMove(sf::Vector2f(0, -2)))
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getUpKey()) && leftPaddle.canMove(sf::Vector2f(0, -3)))
 					leftPaddle.move(0, -3);
-				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()) && leftPaddle.canMove(sf::Vector2f(0, 2)))
+				if (sf::Keyboard::isKeyPressed(leftPaddle.getDownKey()) && leftPaddle.canMove(sf::Vector2f(0, 3)))
 					leftPaddle.move(0, 3);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()) && rightPaddle.canMove(sf::Vector2f(0, -2)))
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getUpKey()) && rightPaddle.canMove(sf::Vector2f(0, -3)))
 					rightPaddle.move(0, -3);
-				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 2)))
+				if (sf::Keyboard::isKeyPressed(rightPaddle.getDownKey()) && rightPaddle.canMove(sf::Vector2f(0, 3)))
 					rightPaddle.move(0, 3);
 
 				//if Ball is outside screen
