@@ -1,8 +1,10 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
+#include <algorithm>
 #include <cmath>
 #include <string>
+#include <utility>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
@@ -26,11 +28,11 @@ namespace ping
 	class Game
 	{
 		//static const std::string gameName = "Ping";
-
 		unsigned int screenWidth, screenHeight;
+		std::pair<int, int> score;
 		
-		GameMenu::Button playButton;
 		GameState currentState;
+		ping::GameMenu::Button playButton;
 
 		Paddle leftPaddle, rightPaddle;
 		Ball ball;
@@ -45,12 +47,11 @@ namespace ping
 	public:
 		Game();
 
+		void resetAssets();
 		void handleCollisions();
 		void display();
 		void handleEvents();		
 		int run();
-		
-		static sf::Texture getTextureFromColor(const sf::Color&);
 	};
 }
 #endif

@@ -21,6 +21,9 @@ namespace ping
 		sf::Vector2f& getSpeed();
 		//Setters
 		void setSpeed(const sf::Vector2f& _speed);
+
+		bool isLeftOfScreen(const sf::RenderWindow&) const;
+		bool isRightOfScreen(const sf::RenderWindow&) const;
 	};
 }
 

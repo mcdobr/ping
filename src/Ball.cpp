@@ -29,4 +29,18 @@ namespace ping
 	{
 		speed = _speed;
 	}
+
+	bool Ball::isLeftOfScreen(const sf::RenderWindow& window) const
+	{
+		if (this -> getPosition().x < 0)
+			return true;
+		return false;
+	}
+
+	bool Ball::isRightOfScreen(const sf::RenderWindow& window) const
+	{
+		if (this -> getPosition().x > window.getSize().x)
+			return true;
+		return false;
+	}
 }
