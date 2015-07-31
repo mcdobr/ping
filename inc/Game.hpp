@@ -28,8 +28,8 @@ namespace ping
 	class Game
 	{
 		//static const std::string gameName = "Ping";
-		unsigned int screenWidth, screenHeight;
-		std::pair<int, int> score;
+		unsigned int screenWidth, screenHeight, scoreToWin = 5;
+		std::pair<unsigned int, unsigned int> score;
 		
 		GameState currentState;
 		ping::GameMenu::Button playButton;

@@ -35,7 +35,7 @@ namespace ping
 
 	bool Ball::isLeftOfScreen(const sf::RenderWindow& window) const
 	{
-		if (this -> getPosition().x < 0)
+		if (this -> getPosition().x + this -> getGlobalBounds().width < 0)
 			return true;
 		return false;
 	}

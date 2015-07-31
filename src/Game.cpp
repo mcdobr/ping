@@ -31,9 +31,9 @@ namespace ping
 	{
 		//Create paddles and ball
 		leftPaddle = Paddle(whiteTexture, sf::Vector2f(10, 268), sf::Vector2i(8, 64),
-							sf::Keyboard::Key::A, sf::Keyboard::Key::D);
+							sf::Keyboard::A, sf::Keyboard::D);
 		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64),
-							sf::Keyboard::Key::Right, sf::Keyboard::Key::Left);
+							sf::Keyboard::Right, sf::Keyboard::Left);
 		ball = Ball(whiteTexture);
 	}
 
@@ -41,6 +41,7 @@ namespace ping
 	{
 		score = std::make_pair(0, 0);
 		resetAssets();
+		currentState = GameState::GamePlay;
 	}
 
 	void Game::drawScore()
@@ -73,7 +74,7 @@ namespace ping
 				++score.first;
 		
 			//if game is over
-			if (score.first < 3 && score.second < 3)
+			if (score.first < scoreToWin && score.second < scoreToWin)
 				resetAssets();
 			else
 				currentState = GameState::GameOver;
@@ -102,6 +103,8 @@ namespace ping
 		if (hitPaddle)
 		{
 			ball.getSpeed().x *= -1.1;
+			while (ball.getGlobalBounds().intersects(hitPaddle -> getGlobalBounds()))
+				ball.move(ball.getSpeed());
 			boopSound.play();
 		}
 	}
@@ -144,10 +147,10 @@ namespace ping
 				
 				sf::Text winner("", font);
 				winner.setPosition(350, 410);
-				if (score.first == 3)
-					winner.setString("PLAYER 1 WON!");
-				else if (score.second == 3)
-					winner.setString("PLAYER 2 WON!");
+				if (score.first == scoreToWin)
+					winner.setString("PLAYER 1 WON!\nPRESS SPACE TO PLAY AGAIN!\n");
+				else if (score.second == scoreToWin)
+					winner.setString("PLAYER 2 WON!\nPRESS SPACE TO PLAY AGAIN!\n");
 				
 				window.draw(gameOverMsg);
 				window.draw(winner);
@@ -198,6 +201,12 @@ namespace ping
 				{
 					if (playButton.isClicked(event, window))
 						currentState = GameState::GamePlay;
+					break;
+				}
+				case sf::Event::KeyPressed:
+				{
+					if (currentState == GameState::GameOver && event.key.code == sf::Keyboard::Space)
+						reset();
 					break;
 				}
 				default:
