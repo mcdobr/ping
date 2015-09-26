@@ -13,7 +13,7 @@ namespace ping
 		window.setVerticalSyncEnabled(true);
 		window.setFramerateLimit(60);
 
-		font.loadFromFile("Armageda Wide.ttf");
+		font.loadFromFile("res/Armageda Wide.ttf");
 
 		//Create the white texture
 		sf::Image img;
@@ -23,7 +23,7 @@ namespace ping
 		resetAssets();
 
 		//Initialize sound handling part 
-		soundBuffer.loadFromFile("boop_soundFX.wav");
+		soundBuffer.loadFromFile("res/boop_soundFX.wav");
 		boopSound.setBuffer(soundBuffer);
 	}
 
