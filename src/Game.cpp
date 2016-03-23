@@ -26,89 +26,7 @@ namespace ping
 		soundBuffer.loadFromFile("res/boop_soundFX.wav");
 		boopSound.setBuffer(soundBuffer);
 	}
-
-	void Game::resetAssets()
-	{
-		//Create paddles and ball
-		leftPaddle = Paddle(whiteTexture, sf::Vector2f(10, 268), sf::Vector2i(8, 64),
-							sf::Keyboard::A, sf::Keyboard::D);
-		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64),
-							sf::Keyboard::Right, sf::Keyboard::Left);
-		ball = Ball(whiteTexture);
-	}
-
-	void Game::reset()
-	{
-		score = std::make_pair(0, 0);
-		resetAssets();
-		currentState = GameState::GamePlay;
-	}
-
-	void Game::drawScore()
-	{
-		sf::Text lScore(std::to_string(score.first), font);
-		lScore.setPosition(100, 50);
-
-		sf::Text rScore(std::to_string(score.second), font);
-		rScore.setPosition(700, 50);
-		
-		window.draw(lScore);
-		window.draw(rScore);
-	}
-
-	void Game::drawAssets()
-	{
-		window.draw(ball);
-		window.draw(leftPaddle);
-		window.draw(rightPaddle);
-	}
-
-	void Game::handleScore()
-	{
-		//if Ball is outside screen
-		if (ball.isLeftOfScreen(window) || ball.isRightOfScreen(window))
-		{
-			if (ball.isLeftOfScreen(window))
-				++score.second;		
-			else
-				++score.first;
-		
-			//if game is over
-			if (score.first < scoreToWin && score.second < scoreToWin)
-				resetAssets();
-			else
-				currentState = GameState::GameOver;
-		}
-	}
 	
-
-	void Game::handleCollisions()
-	{
-		//if the ball hits the top or the bottom of the screen
-		if (ball.getPosition().y < fabs(ball.getSpeed().y) || 
-				fabs(ball.getPosition().y + ball.getGlobalBounds().height- screenHeight) < ball.getSpeed().y)
-		{
-			ball.getSpeed().y *= -1;
-			return;
-		}
-
-		//if the ball hits a paddle
-		Paddle* hitPaddle = nullptr;
-		if (ball.getGlobalBounds().intersects(leftPaddle.getGlobalBounds()))
-			hitPaddle = &leftPaddle;
-
-		if (ball.getGlobalBounds().intersects(rightPaddle.getGlobalBounds()))
-			hitPaddle = &rightPaddle;
-
-		if (hitPaddle)
-		{
-			ball.getSpeed().x *= -1.1;
-			while (ball.getGlobalBounds().intersects(hitPaddle -> getGlobalBounds()))
-				ball.move(ball.getSpeed());
-			boopSound.play();
-		}
-	}
-
 	void Game::display()
 	{
 		window.clear();
@@ -181,10 +99,62 @@ namespace ping
 			{
 				break;
 			}
+			case GameState::SelectWinScore:
+			{
+				this -> handleSelectingWinScore();
+				break;
+			}
 		}
 		window.display();
 	}
+	
+	void Game::drawAssets()
+	{
+		window.draw(ball);
+		window.draw(leftPaddle);
+		window.draw(rightPaddle);
+	}
 
+	void Game::drawScore()
+	{
+		sf::Text lScore(std::to_string(score.first), font);
+		lScore.setPosition(100, 50);
+
+		sf::Text rScore(std::to_string(score.second), font);
+		rScore.setPosition(700, 50);
+		
+		window.draw(lScore);
+		window.draw(rScore);
+	}
+
+	void Game::handleCollisions()
+	{
+		//if the ball hits the top or the bottom of the screen
+		if (ball.getPosition().y < fabs(ball.getSpeed().y) || 
+				fabs(ball.getPosition().y + ball.getGlobalBounds().height- screenHeight) < ball.getSpeed().y)
+		{
+			ball.getSpeed().y *= -1;
+			return;
+		}
+
+		//if the ball hits a paddle
+		Paddle* hitPaddle = nullptr;
+		if (ball.getGlobalBounds().intersects(leftPaddle.getGlobalBounds()))
+			hitPaddle = &leftPaddle;
+
+		if (ball.getGlobalBounds().intersects(rightPaddle.getGlobalBounds()))
+			hitPaddle = &rightPaddle;
+
+		if (hitPaddle)
+		{
+			ball.getSpeed().x *= -1.1;
+			while (ball.getGlobalBounds().intersects(hitPaddle -> getGlobalBounds()))
+				ball.move(ball.getSpeed());
+			boopSound.play();
+		}
+	}
+
+	
 	void Game::handleEvents()
 	{
 		sf::Event event;
@@ -215,6 +185,52 @@ namespace ping
 				}
 			}
 		}
+	}
+
+	void Game::handleScore()
+	{
+		//if Ball is outside screen
+		if (ball.isLeftOfScreen(window) || ball.isRightOfScreen(window))
+		{
+			if (ball.isLeftOfScreen(window))
+				++score.second;		
+			else
+				++score.first;
+		
+			//if game is over
+			if (score.first < scoreToWin && score.second < scoreToWin)
+				resetAssets();
+			else
+				currentState = GameState::GameOver;
+		}
+	}
+	
+	void Game::handleSelectingWinScore()
+	{
+		using ping::GameMenu::Button;
+		
+		Button button5;
+		button5.setString("5");
+		
+		
+		button5.setPosition(250, 300);
+	}
+	
+	void Game::resetAssets()
+	{
+		//Create paddles and ball
+		leftPaddle = Paddle(whiteTexture, sf::Vector2f(10, 268), sf::Vector2i(8, 64),
+							sf::Keyboard::A, sf::Keyboard::D);
+		rightPaddle = Paddle(whiteTexture, sf::Vector2f(782, 268), sf::Vector2i(8, 64),
+							sf::Keyboard::Right, sf::Keyboard::Left);
+		ball = Ball(whiteTexture);
+	}
+
+	void Game::reset()
+	{
+		score = std::make_pair(0, 0);
+		resetAssets();
+		currentState = GameState::GamePlay;
 	}
 
 	//Main Game loop

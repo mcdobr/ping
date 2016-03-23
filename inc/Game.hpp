@@ -22,7 +22,8 @@ namespace ping
 		GameOver,
 		MainMenu,
 		VideoMenu,
-		AudioMenu
+		AudioMenu,
+		SelectWinScore
 	};
 
 	class Game
@@ -45,17 +46,22 @@ namespace ping
 		sf::Sound boopSound;
 
 		//Private interface
-		void resetAssets();
-		void reset();
-
-		void drawScore();
+		
 		void drawAssets();
+		void drawScore();
 
-		void handleScore();
+		
+		void handleEvents();
 		void handleCollisions();
+		void handleScore();
+		void handleSelectingWinScore();
+		
 
 		void display();
-		void handleEvents();		
+		
+		
+		void reset();
+		void resetAssets();
 
 	public:
 		Game();
